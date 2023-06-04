@@ -1,0 +1,147 @@
+@font-face {
+    font-family: font;
+    src: url(TeshrinAR+LT-Bold.ttf);
+}
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+}
+:root{
+    --Zard : #fdb445;
+    --Sorati : #F266AB;
+    --Banafsh : #A459D1;
+    --Abi : #c2fbff;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: font;
+    background-color: var(--Abi);
+    user-select: none;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+.gameContainer{
+    width: 24em; height: 24em;
+    display: grid;
+    grid-template-columns: repeat(4,96px);
+    grid-template-rows: repeat(4,96px);
+}
+.cell{
+    background-color: var(--Banafsh);
+    border: 3.5px solid var(--Abi);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+}
+.cell:not(.selected):hover{
+    background-color: var(--Sorati);
+}
+.selected{
+    background-color: #9122d1;
+}
+.gameStatus{
+    margin-top: 0.5em;
+    font-size: 1.9rem;
+}
+.gameRestart{
+    font-size: 1.1rem;
+    background-color: var(--Zard);
+    border-radius: 0.8rem;
+    width: 9em;
+    padding: 1rem;
+    padding-top: 1.1rem;
+    font-family: font;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: 0.2s;
+}
+.gameRestart:hover{
+    background-color: #fccb81;
+    font-size: 1.08rem;
+}
+p{
+    position: absolute;
+    border-radius: 0.6rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+.p1{
+    transform: translate(-550px,-150px);
+    background-color: transparent;
+    font-size: 1rem;
+}
+.p2{
+    transform: translateX(-490px);
+    background-color: transparent;
+}
+.no{
+    position: absolute;
+    transform: translate(-400px,75px);
+    font-size: 1.3rem;
+    background-color: red;
+    font-family: font;
+    padding: 0.7rem;
+    border-radius: 0.7rem;
+    width: 4em;
+    cursor: pointer;
+    transition: 0.35s;
+    display: none;
+}
+.no:hover{
+    box-shadow: 0 0 20px red;
+    background-color: rgb(253, 39, 39);
+}
+.yes{
+    position: absolute;
+    transform: translate(-270px,75px);
+    font-size: 1.3rem;
+    background-color: green;
+    font-family: font;
+    padding: 0.7rem;
+    border-radius: 0.7rem;
+    width: 4em;
+    cursor: pointer;
+    transition: 0.35s;
+    display: none;
+}
+.yes:hover{
+    box-shadow: 0 0 20px green;
+    background-color: rgb(0, 150, 0);
+}
+.p3{
+    position: absolute;
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateY(325px);
+    background-color: var(--Sorati);
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+}
+@keyframes opacity {
+    0%{opacity: 0;}
+    20%{opacity: 1;}
+    80%{opacity: 1;}
+    100%{opacity: 0;}
+}
+audio{
+    position: absolute;
+    opacity: 0;
+    display: none;
+}
